@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import headerImg from "../assets/img/me.jpg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -62,12 +62,24 @@ export const Banner = () => {
                   </div>
               }
             </TrackVisibility>
+            <div className="pdf-button">
+              <a href="Resume.pdf" download="Resume.pdf" style={{
+                textDecorationLine: 'underline',
+                textDecorationThickness: '20%',
+                textDecorationColor: 'white',
+                width: '200px'
+                }}>
+                <p>Download Resume</p>
+              </a>
+            </div>
           </Col>
           <Col xs={12} md={6} xl={5}>
             <TrackVisibility>
               {
                 ({ isVisible }) =>
-                  <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
+                  <div className={isVisible ? "animate__animated animate__zoomIn" : ""} style={{
+                    marginTop: '25px'
+                  }}>
                     <img src={headerImg} alt="Header Img" />
                   </div>
               }
